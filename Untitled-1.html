@@ -1,0 +1,274 @@
+<html>
+<head>
+  <title>buat mala</title>
+  <style>
+    body {
+      body {
+      margin: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      background: linear-gradient(to bottom, #c9e4c5, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      color: #2f5d62;
+    }
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #588157;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gunung {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    <style>
+      </head>
+      <body>
+
+<!-- Lagu: Putar di awal dan akan terus nyala -->
+<audio id="bg-music" src="taylor swift - mine (taylor's version) (sped up)  accelo-sound.mp3" autoplay loop></audio>
+
+<!-- Slide 1 -->
+<div class="slide active" id="slide1">
+  <h1>tulis nama kamu dulu ya</h1>
+  <input type="text" id="namaInput" placeholder="Nama kamu..." />
+  <button onclick="keSlide2()">Lanjut</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+  <h2>happy girl friend day, mal <span id="nama mala"></span>! (eh tapi ini temen loh ya 😏)</h2>
+  <p>Hari ini katanya National Girlfriend Day, yaa walaupun kamu bukan pacarku (eh, dan aku juga gak nembak kok 😌), tapi aku tetep pengen ngucapin sesuatu buat kamu.<br><br>
+   karena...… dari semua orang yang pernah aku kenal, kamu tuh termasuk yang paling nyantol di pikiranku entah kenapa.
+Mungkin karena kamu punya cara sendiri buat bikin suasana jadi hangat,
+atau karena kamu bisa ngobrol santai tapi tetap dalem,
+atau bisa juga karena kamu tuh tipe yang kadang cuek tapi sebenernya peduli (iya, aku liat loh itu).
+
+Aku tau, posisi kita sekarang bukan yang spesial-spesial banget.
+Mungkin aku cuma temen biasa di hidup kamu, dan itu gak apa-apa.
+Tapi dari sudut pandang aku, kamu tuh sosok cewek yang layak dihargai, dihormati, dan diperlakukan dengan tulus.
+
+Maka dari itu, hari ini aku pengen bilang:
+Selamat hari cewek yang istimewa… versi kamu sendiri.
+
+Kamu emang bukan ‘girlfriend’ ku,
+tapi kamu tetap cewek yang berharga dan layak dapet ucapan baik di hari ini.
+
+Terima kasih udah pernah jadi bagian dari hari-hariku (walau sekilas atau pelan-pelan).
+Terima kasih juga udah pernah bikin aku senyum sendiri,
+mikirin hal-hal kecil tentang kamu yang mungkin kamu lupa.
+
+Dan ya, semoga siapa pun nanti yang jadi pasangan kamu,
+dia bisa sadar betapa beruntungnya punya kamu, for real.
+
+Hari ini bukan buat mengubah status atau mengharap lebih,
+tapi sekadar pengingat…
+kalau ada seseorang di luar sana yang doain kamu diam-diam,
+yang pengen kamu bahagia,
+dan yang lagi belajar ikhlas tanpa ngarep, tapi tetep gak bisa gak peduli.
+
+Jadi… Happy Girl Friend Day, Mala.
+Dan jangan lupa senyum,
+karena senyum kamu bisa ngerubah hari orang lain (termasuk aku).
+
+Dari seseorang yang (mungkin) kamu anggap biasa,
+tapi gak pernah ngerasa kamu itu biasa</p>
+  <button onclick="keSlide3()">Lanjut</button>
+  
+body {
+      margin: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      background: linear-gradient(to bottom, #c9e4c5, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      color: #2f5d62;
+    }
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #588157;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gunung {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gunung">⛰️</div>
+  <h1>Naik gunung bareng yuk!</h1>
+  <p id="namaParagraf">tapi cuma sama kamu doang loh 😌</p>
+
+  <p>Pilih waktu:</p>
+  <select id="waktu">
+    <option>pagi</option>
+    <option>siang</option>
+    <option>sore</option>
+    <option>malam</option>
+  </select>
+
+  <p>Pilih tanggal:</p>
+  <input type="date" id="tanggal" />
+
+  <button onclick="nextPage()">lanjut lagi ➤</button>
+
+  <script>
+    const name = localStorage.getItem("girlName");
+    if (name) {
+      document.getElementById("namaParagraf").innerText = `Tapi cuma sama kamu doang, ${name} 😌`;
+    }
+
+    function nextPage() {
+      const waktu = document.getElementById("waktu").value;
+      const tanggal = document.getElementById("tanggal").value;
+      localStorage.setItem("waktunaikgunung", waktu);
+      localStorage.setItem("tanggalnaikgunung", tanggal);
+      window.location.href = "page4.html";
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Terima Kasih yaa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Mono' monospace;
+      background: linear-gradient(to top, #fff5e1, #f4e2d8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    h1 {
+      color: #614124;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 20px;
+    }
+    .thanks {
+      font-style: italic;
+      margin-top: 30px;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #f5c518;
+      animation: twinkle 2s infinite;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+    audio {
+      position: absolute;
+      bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank you, <span id="namaMala">...</span> 🌼</h1>
+  <p>Udah mau buka semua ini dan sabar ngikutin dari awal. Gak banyak yang bisa aku kasih, tapi semoga ini cukup buat bikin kamu senyum hari ini. 🤍</p>
+  <p class="thanks">selamat hari girl friend day, malaaa (eh tapi ini bukan nembak lohh, soalnya aku bilangnya temen bukan pacar hehe😏)</p>
+  <p class="thanks">aku cuma pengen kamu tau, kamu itu unik, lucu, kuat, dan pantas disayang. tapi tetap jadi kamu yang sekarang ya, jangan berubah yaaa</p>
+
+  <audio controls autoplay loop>
+    <source src="taylor swift - mine (taylor's version) (sped up)  accelo-sound.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const nama = localStorage.getItem("girlName");
+    if (nama) {
+      document.getElementById("namaMala").innerText = nama;
+    }
+
+    // Tambah bintang random
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 2}s`;
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>
+
+<script>
+  let nama = "";
+  function keSlide2() {
+    nama = document.getElementById("namaInput").value;
+    document.getElementById("namaMala").innerText = nama;
+    showSlide("slide2");
+  }
+  function keSlide3() {
+    showSlide("slide3");
+  }
+  function keSlide4() {
+    showSlide("slide4");
+  }
+
+  function showSlide(id) {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    document.getElementById(id).classList.add("active");
+  }
+</script>
+
+</body>
+</html>
